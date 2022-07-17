@@ -68,7 +68,7 @@ function get_details($url)
  if (strpos($url,'watch?v') !== false) {
     $type='video';
  }
- $couchurl = 'http://augustoandro:windows@192.168.43.143:5984/hyperledger/';
+ $couchurl = 'http://admin:manjaro@localhost:5984/hyperledger/';
  $couch_rec = '{"site_head":"'.$title.'","link":"'.$url.'","keywords":"'.$keywords.'","description":"'.$description.'","visual_file":"'.$imag.'","file_type":"'.$type.'"}';
  $ch = curl_init(); 
 

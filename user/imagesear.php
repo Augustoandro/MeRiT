@@ -62,13 +62,13 @@ window.onclick = function(event) {
             </div>
             <div class="result">    
                 <?php
-            	    $couchurl = 'http://augustoandro:windows@192.168.43.143:5984/hyperledger/_all_docs';
+            	    $couchurl = 'http://admin:manjaro@127.0.0.1:5984/hyperledger/_all_docs';
                            $output = file_get_contents($couchurl);
                            //echo $output;
                            $decoded_json = json_decode($output,true);
                            foreach($decoded_json['rows'] as $id) {
                             //echo $id['id'].'<br>';
-                            $couchurl2 = 'http://augustoandro:windows@192.168.43.143:5984/hyperledger/'.$id['id'];
+                            $couchurl2 = 'http://admin:manjaro@127.0.0.1:5984/hyperledger/'.$id['id'];
                             $output2 = file_get_contents($couchurl2);
                             //echo $output2;
                             $decoded_json2 = json_decode($output2,true);
