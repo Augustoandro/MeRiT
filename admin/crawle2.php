@@ -10,7 +10,14 @@ function get_details($url)
  $options=array('http'=>array('method'=>"GET", 'headers'=>"User-Agent: ScrapBot/1.0\n"));
  $context=stream_context_create($options);
  $doc = new DOMDocument();
- @$doc->loadHTML(@file_get_contents($url,false,$context));
+ echo $url;
+ echo $context;
+ $outputurl9 = @file_get_contents($url,false,$context);
+ echo $outputurl9;
+ if (empty($outputurl9)){
+     $outputurl9 = @file_get_contents('http://localhost',false,$context);
+ }
+ @$doc->loadHTML($outputurl9);
  $title=$doc->getElementsByTagName("title");
  $title=$title->item(0)->nodeValue;
  $xpath = new DOMXPath($doc);
